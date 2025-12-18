@@ -1,5 +1,5 @@
 /**
-* ЗАДАЧА 1.1: Классический рекурсивный алгоритм с backtracking
+ * ЗАДАЧА 1.1: Классический рекурсивный алгоритм с backtracking
  *
  * @param arr Исходный массив элементов
  * @param n Количество элементов
@@ -16,10 +16,10 @@
  * int arr[] = {1, 2, 3};
  * permutations_backtrack(arr, 3, print_permutation);
  */
-void permutations_backtrack(int arr[], int n,
-                           void (*callback)(int perm[], int n)) {
-  // TODO: Проверить входные параметры (n > 0, arr != NULL)
-  // TODO: Выделить память для used[] и current_perm[]
-  // TODO: Вызвать рекурсивную функцию generate()
-  // TODO: Освободить память
+void permutations_backtrack(int arr[], int n, void (*callback)(int perm[], int n))
+{
+    // TODO: Проверить входные параметры (n > 0, arr != NULL)
+    // TODO: Выделить память для used[] и current_perm[]
+    // TODO: Вызвать рекурсивную функцию generate()
+    // TODO: Освободить память
 }

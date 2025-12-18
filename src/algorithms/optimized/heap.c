@@ -1,5 +1,5 @@
 /**
-* ЗАДАЧА 3.2: Алгоритм Хипа (Heap's algorithm)
+ * ЗАДАЧА 3.2: Алгоритм Хипа (Heap's algorithm)
  *
  * TODO:
  * 1. Нерекурсивная реализация алгоритма Хипа
@@ -7,20 +7,20 @@
  * 3. Минимальное количество операций обмена
  * 4. Генерация всех перестановок за n! - 1 обменов
  */
-void permutations_heap(int arr[], int n,
-                      void (*callback)(int perm[], int n)) {
-  // TODO: Инициализация массива счетчиков c[0..n-1] = 0
-  // TODO: Вызов callback() для начальной перестановки
-  // TODO: Алгоритм Хипа:
-  //   i = 0;
-  //   while i < n:
-  //     if c[i] < i:
-  //       if i четное: swap(arr[0], arr[i])
-  //       else: swap(arr[c[i]], arr[i])
-  //       callback(arr, n)
-  //       c[i] += 1
-  //       i = 0
-  //     else:
-  //       c[i] = 0
-  //       i += 1
+void permutations_heap(int arr[], int n, void (*callback)(int perm[], int n))
+{
+    // TODO: Инициализация массива счетчиков c[0..n-1] = 0
+    // TODO: Вызов callback() для начальной перестановки
+    // TODO: Алгоритм Хипа:
+    //   i = 0;
+    //   while i < n:
+    //     if c[i] < i:
+    //       if i четное: swap(arr[0], arr[i])
+    //       else: swap(arr[c[i]], arr[i])
+    //       callback(arr, n)
+    //       c[i] += 1
+    //       i = 0
+    //     else:
+    //       c[i] = 0
+    //       i += 1
 }
