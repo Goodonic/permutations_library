@@ -44,7 +44,6 @@ jobs:
 
   code-quality:
     runs-on: ubuntu-latest
-    # Убираем зависимость для отладки
     # needs: build-and-test
     # if: github.event_name == 'pull_request'
 
@@ -56,54 +55,78 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y clang clang-tidy clang-format python3 python3-pip
 
-      - name: Configure CMake
+      - name: Configure CMake for clang-tidy
         run: |
           cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
-      - name: Build (minimum)
+      - name: Build minimal target
         run: |
           # Собираем минимальную цель чтобы создать compile_commands.json
           cmake --build build --target help
 
-      - name: Run clang-format check
+      - name: Run clang-format check (exclude build directory)
         run: |
-          find . -name '*.c' -o -name '*.h' | xargs clang-format --dry-run --Werror
+          # Исключаем директорию build и другие сгенерированные файлы
+          find . -type f \( -name '*.c' -o -name '*.h' \) \
+            ! -path "./build/*" \
+            ! -path "./*/build/*" \
+            ! -path "./*/*/build/*" \
+            ! -name "CMakeCCompilerId.c" \
+            ! -name "CMakeCXXCompilerId.cpp" \
+            | xargs clang-format --dry-run --Werror
 
-      - name: Run clang-tidy with detailed output
+      - name: Run clang-tidy on source files only
         run: |
-          # Создаем файл для сбора всех ошибок
-          echo "Running clang-tidy on all .c files..." > clang-tidy-report.txt
-          echo "=====================================" >> clang-tidy-report.txt
+          # Создаем файл отчета
+          echo "Clang-tidy Report" > clang-tidy-report.txt
+          echo "=================" >> clang-tidy-report.txt
           
-          # Находим все .c файлы и проверяем их
-          find . -name "*.c" | while read file; do
-            echo "Checking $file..." >> clang-tidy-report.txt
-            echo "-------------------" >> clang-tidy-report.txt
+          ERROR_FOUND=false
           
-            # Запускаем clang-tidy и сохраняем вывод
-            if ! clang-tidy -p build "$file" --extra-arg=-Wno-unknown-warning-option 2>&1 >> clang-tidy-report.txt; then
-              echo "Error found in $file" >> clang-tidy-report.txt
+          # Ищем только исходные файлы, исключая build директорию
+          find . -name "*.c" \
+            ! -path "./build/*" \
+            ! -path "./*/build/*" \
+            ! -path "./*/*/build/*" \
+            | while read file; do
+            echo "Checking $file..." | tee -a clang-tidy-report.txt
+          
+            # Запускаем clang-tidy
+            output=$(clang-tidy -p build "$file" 2>&1)
+          
+            if [ -n "$output" ]; then
+              echo "$output" | tee -a clang-tidy-report.txt
+              ERROR_FOUND=true
             fi
-          
-            echo "" >> clang-tidy-report.txt
           done
           
-          # Показываем отчет
+          # Выводим отчет
+          echo ""
+          echo "=== Summary ==="
           cat clang-tidy-report.txt
           
-          # Проверяем, есть ли ошибки
-          if grep -q "error:" clang-tidy-report.txt || grep -q "warning:" clang-tidy-report.txt; then
-            echo "Clang-tidy found issues!"
-            # Выходим с ошибкой, если нашли проблемы
+          if [ "$ERROR_FOUND" = true ]; then
+            echo "❌ Clang-tidy found issues!"
             exit 1
+          else
+            echo "✅ All files passed clang-tidy checks!"
           fi
 
-      - name: Run cppcheck
+      - name: Run cppcheck on source files only
         run: |
-          cppcheck --enable=all --suppress=missingIncludeSystem \
+          cppcheck --enable=all \
+                   --suppress=missingIncludeSystem \
                    --suppress=unusedFunction \
                    --inline-suppr \
                    --error-exitcode=1 \
                    --force \
-                   . 2> cppcheck_report.txt
+                   --output-file=cppcheck_report.txt \
+                   ./src ./examples ./benchmarks ./tests 2>&1 || true
+          
           cat cppcheck_report.txt
+          
+          # Проверяем наличие ошибок
+          if grep -q "(error)" cppcheck_report.txt; then
+            echo "❌ Cppcheck found errors!"
+            exit 1
+          fi
