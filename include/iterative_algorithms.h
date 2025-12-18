@@ -1,0 +1,8 @@
+//
+// Created by orexo on 18.12.2025.
+//
+
+#ifndef ITERATIVE_ALGORITHMS_H
+#define ITERATIVE_ALGORITHMS_H
+
+#endif //ITERATIVE_ALGORITHMS_H

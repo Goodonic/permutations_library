@@ -1,0 +1,8 @@
+//
+// Created by orexo on 18.12.2025.
+//
+
+#ifndef OPTIMIZED_ALGORITHMS_H
+#define OPTIMIZED_ALGORITHMS_H
+
+#endif //OPTIMIZED_ALGORITHMS_H

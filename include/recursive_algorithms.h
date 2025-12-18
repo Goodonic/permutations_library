@@ -1,0 +1,8 @@
+//
+// Created by orexo on 18.12.2025.
+//
+
+#ifndef RECURSIVE_ALGORITHMS_H
+#define RECURSIVE_ALGORITHMS_H
+
+#endif //RECURSIVE_ALGORITHMS_H
