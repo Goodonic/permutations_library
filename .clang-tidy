@@ -1,5 +1,6 @@
 Checks: >
   *,
+  -google-readability-todo,
   -altera-*,
   -fuchsia-*,
   -android-*,

@@ -1,9 +1,11 @@
 /**
- * ЗАДАЧА 4.2: Система бенчмаркинга
+* ЗАДАЧА 4.2: Система бенчмаркинга
  */
 
 #include <stdbool.h>
 #include <stddef.h>
+
+#define ERROR_MESSAGE_SIZE 256
 
 typedef struct
 {
@@ -14,7 +16,7 @@ typedef struct
     int swap_operations;
     int comparison_operations;
     bool success;
-    char error_message[256];
+    char error_message[ERROR_MESSAGE_SIZE];
 } benchmark_result_t;
 
 /**
@@ -40,13 +42,16 @@ typedef enum
     ALGO_BINARY_MASKS,
     ALGO_PSEUDO_LEXICOGRAPHIC
 } permutation_algorithm_t;
-benchmark_result_t benchmark_algorithm(permutation_algorithm_t algo, int arr[], int n,
-                                       int iterations)
+
+benchmark_result_t benchmarkAlgorithm(permutation_algorithm_t algo, int arr[], int size,
+                                      int iterations)
 {
-    // TODO: Подготовка тестовых данных
-    // TODO: Замер времени (clock_gettime)
-    // TODO: Подсчет операций через callback-счетчики
-    // TODO: Измерение памяти (mallinfo или custom allocator)
-    // TODO: Агрегация результатов по нескольким запускам
-    // TODO: Формирование отчета
+    benchmark_result_t result = {0};
+    // TODO(runner): Подготовка тестовых данных
+    // TODO(runner): Замер времени (clock_gettime)
+    // TODO(runner): Подсчет операций через callback-счетчики
+    // TODO(runner): Измерение памяти (mallinfo или custom allocator)
+    // TODO(runner): Агрегация результатов по нескольким запускам
+    // TODO(runner): Формирование отчета
+    return result;
 }
