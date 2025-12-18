@@ -12,7 +12,8 @@
  * 5. Тестирование порядка при необходимости
  * 6. Стресс-тесты
  */
-bool runUnitTests(void) {
+bool runUnitTests(void)
+{
     // TODO: Тесты для каждого алгоритма
     // TODO: Проверка корректности для n=0..8
     // TODO: Проверка обработки ошибок
@@ -20,7 +21,8 @@ bool runUnitTests(void) {
     return false;
 }
 
-typedef enum {
+typedef enum
+{
     ALGO_BACKTRACK = 1,
     ALGO_RECURSIVE_SWAP,
     ALGO_NARAYANA,
@@ -33,8 +35,8 @@ typedef enum {
     ALGO_PSEUDO_LEXICOGRAPHIC
 } permutation_algorithm_t;
 
-bool verifyAlgorithmCorrectness(permutation_algorithm_t algo,
-                               int arr[], int n) {
+bool verifyAlgorithmCorrectness(permutation_algorithm_t algo, int arr[], int n)
+{
     // TODO: Генерация всех перестановок
     // TODO: Подсчет количества
     // TODO: Проверка уникальности (хеш-таблица)
