@@ -1,5 +1,5 @@
 /**
-* ЗАДАЧА 1.4: Перестановки с ограничениями (constraint satisfaction)
+ * ЗАДАЧА 1.4: Перестановки с ограничениями (constraint satisfaction)
  *
  * @param constraint Функция, проверяющая допустимость частичной перестановки
  * @param constraint_data Дополнительные данные для функции constraint

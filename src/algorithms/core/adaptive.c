@@ -1,6 +1,6 @@
 #include <stdbool.h>
 /**
-* ЗАДАЧА 4.4: Адаптивный выбор алгоритма
+ * ЗАДАЧА 4.4: Адаптивный выбор алгоритма
  *
  * TODO:
  * 1. Анализ характеристик задачи (n, constraints, порядок)
@@ -8,17 +8,18 @@
  * 3. Поддержка обучения на основе предыдущих запусков
  * 4. Fallback на гарантированно работающий алгоритм
  */
-typedef enum {
-  ALGO_BACKTRACK = 1,
-  ALGO_RECURSIVE_SWAP,
-  ALGO_NARAYANA,
-  ALGO_FACTORIAL_SYSTEM,
-  ALGO_JOHNSON_TROTTER,
-  ALGO_HEAP,
-  ALGO_MINIMAL_CHANGE,
-  ALGO_CYCLE_LEADER,
-  ALGO_BINARY_MASKS,
-  ALGO_PSEUDO_LEXICOGRAPHIC
+typedef enum
+{
+    ALGO_BACKTRACK = 1,
+    ALGO_RECURSIVE_SWAP,
+    ALGO_NARAYANA,
+    ALGO_FACTORIAL_SYSTEM,
+    ALGO_JOHNSON_TROTTER,
+    ALGO_HEAP,
+    ALGO_MINIMAL_CHANGE,
+    ALGO_CYCLE_LEADER,
+    ALGO_BINARY_MASKS,
+    ALGO_PSEUDO_LEXICOGRAPHIC
 } permutation_algorithm_t;
 
 // permutation_algorithm_t select_optimal_algorithm(int n,
