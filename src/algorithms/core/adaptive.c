@@ -24,17 +24,17 @@ typedef enum
 //                                                 bool need_lexicographic,
 //                                                 bool memory_constrained,
 //                                                 constraint_set_t* constraints) {
-//   // TODO: Эвристики выбора алгоритма
-//   // TODO: Учет ограничений памяти
-//   // TODO: Учет требований к порядку
-//   // TODO: Возможность обучения на истории запусков
+//   Эвристики выбора алгоритма
+//   Учет ограничений памяти
+//   Учет требований к порядку
+//   Возможность обучения на истории запусков
 // }
 
 // void generate_permutations_adaptive(int arr[], int n,
 //                                    constraint_set_t* constraints,
 //                                    void (*callback)(int perm[], int n)) {
-//   // TODO: Анализ задачи
-//   // TODO: Выбор алгоритма через select_optimal_algorithm()
-//   // TODO: Вызов generate_permutations() с выбранным алгоритмом
-//   // TODO: Обработка случая, когда алгоритм не справился
+//   Анализ задачи
+//   Выбор алгоритма через select_optimal_algorithm()
+//   Вызов generate_permutations() с выбранным алгоритмом
+//   Обработка случая, когда алгоритм не справился
 // }
