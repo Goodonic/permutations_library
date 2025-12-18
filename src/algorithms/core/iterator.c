@@ -24,7 +24,7 @@ typedef enum
  * 3. Настройка указателей на функции next/has_next/free
  * 4. Копирование исходного массива
  */
-permutation_iterator_t* perm_iterator_create(permutation_algorithm_t algo, int arr[], int n)
+permutation_iterator_t* permIteratorCreate(permutation_algorithm_t algo, int arr[], int n)
 {
     // Проверка параметров
     // Выделение памяти
@@ -32,13 +32,13 @@ permutation_iterator_t* perm_iterator_create(permutation_algorithm_t algo, int a
     // Установка функций работы с итератором
 }
 
-bool perm_iterator_has_next(permutation_iterator_t* iter)
+bool permIteratorHasNext(permutation_iterator_t* iter)
 {
     // Проверка состояния итератора
     // Вызов соответствующей функции алгоритма
 }
 
-int* perm_iterator_next(permutation_iterator_t* iter)
+int* permIteratorNext(permutation_iterator_t* iter)
 {
     // Получение следующей перестановки
     // Обновление состояния итератора

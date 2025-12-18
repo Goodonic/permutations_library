@@ -18,7 +18,7 @@ typedef enum
     ALGO_BINARY_MASKS,
     ALGO_PSEUDO_LEXICOGRAPHIC
 } permutation_algorithm_t;
-void visualize_algorithm(permutation_algorithm_t algo, int arr[], int n,
+void visualizeAlgorithm(permutation_algorithm_t algo, int arr[], int n,
                          void (*step_callback)(const char* desc, int state[], int n))
 {
     // Модификация алгоритма для вызова step_callback

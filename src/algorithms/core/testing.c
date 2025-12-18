@@ -1,23 +1,22 @@
 // testing.c
 #include <stdbool.h>
-#include <stdio.h>
+
 /**
  * ЗАДАЧА 4.5: Система тестирования
- *
- * TODO:
+
  * 1. Unit-тесты для каждой функции
  * 2. Property-based тестирование
- * 3. Тестирование на корректность (n! перестановок)
+ * 3. Тестирование на корректность (n! Перестановок)
  * 4. Тестирование на уникальность
  * 5. Тестирование порядка при необходимости
  * 6. Стресс-тесты
  */
 bool runUnitTests(void)
 {
-    // TODO: Тесты для каждого алгоритма
-    // TODO: Проверка корректности для n=0..8
-    // TODO: Проверка обработки ошибок
-    // TODO: Генерация отчетов о покрытии тестами
+    // Тесты для каждого алгоритма
+    // Проверка корректности для n=0..8
+    // Проверка обработки ошибок
+    // Генерация отчетов о покрытии тестами
     return false;
 }
 
@@ -37,7 +36,6 @@ typedef enum
 
 bool verifyAlgorithmCorrectness(const permutation_algorithm_t algo, const int arr[], const int n)
 {
-
     // Генерация всех перестановок
     // Подсчет количества
     // Проверка уникальности (хеш-таблица)
@@ -45,7 +43,6 @@ bool verifyAlgorithmCorrectness(const permutation_algorithm_t algo, const int ar
     // Возврат true/false и диагностика
     if (algo == ALGO_PSEUDO_LEXICOGRAPHIC && n == 1 && arr[0] == 1)
     {
-        printf("PSEUDO LEXICOGRAPHIC test OK\n");
     }
     return false;
 }

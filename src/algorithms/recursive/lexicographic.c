@@ -5,7 +5,7 @@
  * 3. Реализовать алгоритм без явного сравнения перестановок
  * 4. Оптимизировать для последовательного вызова (сохранение состояния)
  */
-void permutations_recursive_lexicographic(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsRecursiveLexicographic(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Сортировка массива (если нужна)
     // Рекурсивная генерация с поддержанием порядка

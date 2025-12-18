@@ -8,7 +8,7 @@
  * 3. Использовать минимальное количество дополнительной памяти
  * 4. Гарантировать генерацию всех n! перестановок
  */
-void permutations_recursive_swap(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsRecursiveSwap(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Проверка входных параметров
     // Рекурсивная генерация с обменами

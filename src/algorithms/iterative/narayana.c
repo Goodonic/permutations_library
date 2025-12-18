@@ -10,7 +10,7 @@
  * Пример:
  * arr = [1,2,3] → next() → arr = [1,3,2] → next() → arr = [2,1,3]
  */
-bool next_permutation_narayana(int arr[], int n)
+bool nextPermutationNarayana(int arr[], int n)
 {
     // Поиск индекса i (шаг 1)
     // Если i не найден - вернуть false
@@ -18,9 +18,10 @@ bool next_permutation_narayana(int arr[], int n)
     // Обмен arr[i] и arr[j] (шаг 3)
     // Реверс суффикса после i (шаг 4)
     // Вернуть true
+    return true;
 }
 
-void permutations_narayana(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsNarayana(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Создать копию массива
     // Отсортировать массив для начала с минимальной перестановки

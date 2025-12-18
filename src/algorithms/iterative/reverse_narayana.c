@@ -5,7 +5,7 @@
  * 3. Генерировать prev_permutation вместо next_permutation
  * 4. Поддержка выбора направления
  */
-void permutations_reverse_narayana(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsReverseNarayana(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Сортировка массива по убыванию
     // Реализация prev_permutation()

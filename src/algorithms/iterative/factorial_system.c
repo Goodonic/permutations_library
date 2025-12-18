@@ -5,7 +5,7 @@
  * 3. Прямой доступ к любой перестановке по ее номеру
  * 4. Генерация в порядке возрастания номеров
  */
-void permutation_from_index(int arr[], int n, long index, int result[])
+void permutationFromIndex(int arr[], int n, long index, int result[])
 {
     // Преобразование index в факториальную систему
     // Построение перестановки по факториальным цифрам
@@ -13,7 +13,7 @@ void permutation_from_index(int arr[], int n, long index, int result[])
     // Обработка index вне диапазона [0, n!-1]
 }
 
-void permutations_factorial_system(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsFactorialSystem(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Вычисление n!
     // Цикл по всем индексам от 0 до n!-1

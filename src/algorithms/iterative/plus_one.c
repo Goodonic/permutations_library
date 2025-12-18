@@ -5,7 +5,7 @@
  * 3. Преобразовывать индексы в перестановки
  * 4. Гарантировать генерацию всех перестановок
  */
-void permutations_plus_one(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsPlusOne(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Инициализация массива индексов
     // Цикл генерации всех комбинаций индексов

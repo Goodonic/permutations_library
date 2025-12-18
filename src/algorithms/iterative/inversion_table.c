@@ -5,14 +5,14 @@
  * 3. Конвертировать каждую таблицу в перестановку
  * 4. Гарантировать лексикографический порядок
  */
-void permutation_from_inversion_table(int inv_table[], int n, int result[])
+void permutationFromInversionTable(int inv_table[], int n, int result[])
 {
     // Алгоритм построения перестановки по таблице инверсий
     // Использовать структуры данных для эффективной вставки
     // Проверка корректности таблицы инверсий
 }
 
-void permutations_inversion_table(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsInversionTable(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Генерация всех возможных таблиц инверсий
     // Для каждой таблицы - построение перестановки

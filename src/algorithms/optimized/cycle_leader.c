@@ -5,7 +5,7 @@
  * 3. Особенно эффективно для некоторых классов перестановок
  * 4. Минимизация операций копирования
  */
-void permutations_cycle_leader(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsCycleLeader(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Поиск разбиения на циклы
     // Инициализация структур для отслеживания циклов

@@ -5,7 +5,7 @@
  * 3. Реализация через алгоритм Эрлиха
  * 4. Оптимизация для кэширования
  */
-void permutations_minimal_change(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsMinimalChange(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Инициализация массивов a, b, c (алгоритм Эрлиха)
     // Вызов callback() для начальной перестановки

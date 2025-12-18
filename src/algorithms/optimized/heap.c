@@ -5,7 +5,7 @@
  * 3. Минимальное количество операций обмена
  * 4. Генерация всех перестановок за n! - 1 обменов
  */
-void permutations_heap(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsHeap(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Инициализация массива счетчиков c[0..n-1] = 0
     // Вызов callback() для начальной перестановки

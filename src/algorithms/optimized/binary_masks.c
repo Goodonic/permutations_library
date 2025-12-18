@@ -5,7 +5,7 @@
  * 3. Особенно эффективно для небольших n (n ≤ 16)
  * 4. Минимальные накладные расходы
  */
-void permutations_binary_masks(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsBinaryMasks(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Использование uint32_t для масок при n ≤ 16
     // Рекурсивная/итеративная генерация масок

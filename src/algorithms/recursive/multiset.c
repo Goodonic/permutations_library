@@ -5,7 +5,7 @@
  * 3. Вычислять количество уникальных перестановок: n!/(n1!*n2!*...*nk!)
  * 4. Реализовать эффективное кэширование
  */
-void multiset_permutations(int arr[], int n, void (*callback)(int perm[], int n))
+void multisetPermutations(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Подсчет частот элементов
     // Рекурсивная генерация с учетом частот

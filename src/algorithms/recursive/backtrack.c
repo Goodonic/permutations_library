@@ -14,7 +14,7 @@
  * int arr[] = {1, 2, 3};
  * permutations_backtrack(arr, 3, print_permutation);
  */
-void permutations_backtrack(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsBacktrack(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Проверить входные параметры (n > 0, arr != NULL)
     // Выделить память для used[] и current_perm[]

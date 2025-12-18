@@ -5,7 +5,7 @@
  * 3. Конфигурируемые параметры
  * 4. Адаптация под характеристики данных
  */
-void permutations_pseudo_lexicographic(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsPseudoLexicographic(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Выбор стратегии на основе n
     // Гибридная реализация

@@ -24,7 +24,7 @@ typedef enum
  * 4. Единообразное поведение для всех алгоритмов
  */
 void generatePermutations(permutation_algorithm_t algo, int arr[], int n,
-                           void (*callback)(int perm[], int n))
+                          void (*callback)(int perm[], int n))
 {
     // Валидация входных параметров
     // switch-case по значению algo

@@ -7,7 +7,7 @@
  * 5. Изменить направления всех элементов больше перемещенного
  * 6. Повторять пока есть подвижные элементы
  */
-void permutations_johnson_trotter(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsJohnsonTrotter(int arr[], int n, void (*callback)(int perm[], int n))
 {
     // Инициализация массивов направлений
     // Инициализация массива позиций элементов
