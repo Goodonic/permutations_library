@@ -1,6 +1,5 @@
 # Библиотека алгоритмов генерации перестановок
 
-[![CI Status](https://github.com/Goodonic/permutations-library/actions/workflows/ci.yml/badge.svg)](https://github.com/Goodonic/permutations-library/actions)
 [![Code Coverage](https://img.shields.io/badge/coverage-95%25-green.svg)](https://github.com/yourusername/permutations-library/actions)
 
 Комплексная библиотека на C99 с реализацией 10+ алгоритмов генерации перестановок.
