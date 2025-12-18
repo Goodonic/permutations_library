@@ -50,3 +50,25 @@ target_include_directories(AlgorithmicCombinatoricsLab
         PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
+
+
+# Добавляем цели для форматирования кода
+find_program(CLANG_FORMAT "clang-format")
+if(CLANG_FORMAT)
+    add_custom_target(format
+            COMMAND ${CLANG_FORMAT} -i -style=file ${ALL_SOURCE_FILES}
+            COMMENT "Formatting all source files with clang-format"
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+endif()
+
+# Добавляем цели для статического анализа
+find_program(CLANG_TIDY "clang-tidy")
+if(CLANG_TIDY AND EXISTS ${CMAKE_SOURCE_DIR}/.clang-tidy)
+    add_custom_target(tidy
+            COMMAND ${CLANG_TIDY} ${ALL_SOURCE_FILES} -config=""
+            COMMENT "Running clang-tidy on all source files"
+            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    )
+endif()
+

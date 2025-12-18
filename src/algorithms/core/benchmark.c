@@ -26,6 +26,18 @@ typedef struct {
  * 4. Сбор статистики операций
  * 5. Генерация отчета
  */
+typedef enum {
+  ALGO_BACKTRACK = 1,
+  ALGO_RECURSIVE_SWAP,
+  ALGO_NARAYANA,
+  ALGO_FACTORIAL_SYSTEM,
+  ALGO_JOHNSON_TROTTER,
+  ALGO_HEAP,
+  ALGO_MINIMAL_CHANGE,
+  ALGO_CYCLE_LEADER,
+  ALGO_BINARY_MASKS,
+  ALGO_PSEUDO_LEXICOGRAPHIC
+} permutation_algorithm_t;
 benchmark_result_t benchmark_algorithm(permutation_algorithm_t algo,
                                       int arr[], int n,
                                       int iterations) {
