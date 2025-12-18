@@ -1,0 +1,60 @@
+/* Custom styles for Doxygen documentation */
+
+/* Table of contents */
+#main-nav {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.tabs {
+    background: linear-gradient(135deg, #4a6fa5, #166088);
+    border-radius: 5px;
+}
+
+.tabs li.current a {
+    background: white;
+    color: #166088;
+    font-weight: bold;
+}
+
+/* Code blocks */
+div.fragment {
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+/* Member declarations */
+.memtitle {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 5px;
+    padding: 0.8rem;
+    border-left: 4px solid #4fc3a1;
+}
+
+/* Navigation */
+.navpath ul {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+/* Search */
+#MSearchBox {
+    border: 2px solid #4a6fa5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .contents {
+        padding: 1rem;
+    }
+}
