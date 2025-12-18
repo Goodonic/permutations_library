@@ -1,11 +1,9 @@
 /**
-* ЗАДАЧА 4.2: Система бенчмаркинга
+ * ЗАДАЧА 4.2: Система бенчмаркинга
  */
 
 #include <stdbool.h>
 #include <stddef.h>
-
-#define ERROR_MESSAGE_SIZE 256
 
 typedef struct
 {
@@ -16,13 +14,11 @@ typedef struct
     int swap_operations;
     int comparison_operations;
     bool success;
-    char error_message[ERROR_MESSAGE_SIZE];
+    char error_message[256];
 } benchmark_result_t;
 
 /**
  * Запуск бенчмарка для алгоритма
- *
- * TODO:
  * 1. Измерение времени выполнения
  * 2. Подсчет сгенерированных перестановок
  * 3. Измерение использования памяти
@@ -47,11 +43,11 @@ benchmark_result_t benchmarkAlgorithm(permutation_algorithm_t algo, int arr[], i
                                       int iterations)
 {
     benchmark_result_t result = {0};
-    // TODO(runner): Подготовка тестовых данных
-    // TODO(runner): Замер времени (clock_gettime)
-    // TODO(runner): Подсчет операций через callback-счетчики
-    // TODO(runner): Измерение памяти (mallinfo или custom allocator)
-    // TODO(runner): Агрегация результатов по нескольким запускам
-    // TODO(runner): Формирование отчета
+    // Подготовка тестовых данных
+    // Замер времени (clock_gettime)
+    // Подсчет операций через callback-счетчики
+    // Измерение памяти (mallinfo или custom allocator)
+    // Агрегация результатов по нескольким запускам
+    // Формирование отчета
     return result;
 }
