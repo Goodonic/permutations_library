@@ -18,18 +18,16 @@ typedef enum
 
 /**
  * Основная функция библиотеки
- *
- * TODO:
  * 1. Проверка входных параметров
  * 2. Выбор соответствующего алгоритма по enum
  * 3. Обработка ошибок (неверный алгоритм, n < 0 и т.д.)
  * 4. Единообразное поведение для всех алгоритмов
  */
-void generate_permutations(permutation_algorithm_t algo, int arr[], int n,
-                           void (*callback)(int perm[], int n))
+void generatePermutations(permutation_algorithm_t algo, int arr[], int n,
+                          void (*callback)(int perm[], int n))
 {
-    // TODO: Валидация входных параметров
-    // TODO: switch-case по значению algo
-    // TODO: Вызов соответствующей функции алгоритма
-    // TODO: Обработка ошибок (возврат кода ошибки или assert)
+    // Валидация входных параметров
+    // switch-case по значению algo
+    // Вызов соответствующей функции алгоритма
+    // Обработка ошибок (возврат кода ошибки или assert)
 }

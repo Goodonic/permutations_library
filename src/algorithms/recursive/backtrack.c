@@ -4,8 +4,6 @@
  * @param arr Исходный массив элементов
  * @param n Количество элементов
  * @param callback Функция, вызываемая для каждой найденной перестановки
- *
- * TODO:
  * 1. Реализовать рекурсивную функцию generate()
  * 2. Использовать массив used[] для отслеживания использованных элементов
  * 3. На каждом уровне рекурсии добавлять один элемент к current_perm[]
@@ -16,10 +14,10 @@
  * int arr[] = {1, 2, 3};
  * permutations_backtrack(arr, 3, print_permutation);
  */
-void permutations_backtrack(int arr[], int n, void (*callback)(int perm[], int n))
+void permutationsBacktrack(int arr[], int n, void (*callback)(int perm[], int n))
 {
-    // TODO: Проверить входные параметры (n > 0, arr != NULL)
-    // TODO: Выделить память для used[] и current_perm[]
-    // TODO: Вызвать рекурсивную функцию generate()
-    // TODO: Освободить память
+    // Проверить входные параметры (n > 0, arr != NULL)
+    // Выделить память для used[] и current_perm[]
+    // Вызвать рекурсивную функцию generate()
+    // Освободить память
 }

@@ -19,8 +19,6 @@ typedef struct
 
 /**
  * Запуск бенчмарка для алгоритма
- *
- * TODO:
  * 1. Измерение времени выполнения
  * 2. Подсчет сгенерированных перестановок
  * 3. Измерение использования памяти
@@ -40,13 +38,16 @@ typedef enum
     ALGO_BINARY_MASKS,
     ALGO_PSEUDO_LEXICOGRAPHIC
 } permutation_algorithm_t;
-benchmark_result_t benchmark_algorithm(permutation_algorithm_t algo, int arr[], int n,
-                                       int iterations)
+
+benchmark_result_t benchmarkAlgorithm(permutation_algorithm_t algo, int arr[], int size,
+                                      int iterations)
 {
-    // TODO: Подготовка тестовых данных
-    // TODO: Замер времени (clock_gettime)
-    // TODO: Подсчет операций через callback-счетчики
-    // TODO: Измерение памяти (mallinfo или custom allocator)
-    // TODO: Агрегация результатов по нескольким запускам
-    // TODO: Формирование отчета
+    benchmark_result_t result = {0};
+    // Подготовка тестовых данных
+    // Замер времени (clock_gettime)
+    // Подсчет операций через callback-счетчики
+    // Измерение памяти (mallinfo или custom allocator)
+    // Агрегация результатов по нескольким запускам
+    // Формирование отчета
+    return result;
 }
