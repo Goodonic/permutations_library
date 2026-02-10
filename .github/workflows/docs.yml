@@ -1,5 +1,10 @@
 name: Build Documentation
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 on:
   push:
     branches: [ main, master ]
@@ -28,3 +33,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/html
+          publish_branch: Documentation
+          force_orphan: true
