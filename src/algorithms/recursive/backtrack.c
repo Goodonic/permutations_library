@@ -1,23 +1,32 @@
-/**
- * ЗАДАЧА 1.1: Классический рекурсивный алгоритм с backtracking
- *
- * @param arr Исходный массив элементов
- * @param n Количество элементов
- * @param callback Функция, вызываемая для каждой найденной перестановки
- * 1. Реализовать рекурсивную функцию generate()
- * 2. Использовать массив used[] для отслеживания использованных элементов
- * 3. На каждом уровне рекурсии добавлять один элемент к current_perm[]
- * 4. При достижении длины n вызывать callback()
- * 5. Обеспечить корректное восстановление состояния (backtrack)
- *
- * Пример вызова:
- * int arr[] = {1, 2, 3};
- * permutations_backtrack(arr, 3, print_permutation);
- */
-void permutationsBacktrack(int arr[], int n, void (*callback)(int perm[], int n))
-{
-    // Проверить входные параметры (n > 0, arr != NULL)
-    // Выделить память для used[] и current_perm[]
-    // Вызвать рекурсивную функцию generate()
-    // Освободить память
+void generate(int arr[], int n, int current_perm[], int used[],
+    void (*callback)(int perm[], int n), int pos) {  // backtracking generator
+    
+    if (pos == n) {                                  // full permutation built
+        callback(current_perm, n);                   // call user function
+        return;
+    }
+    
+    for (int i = 0; i < n; i++) {                    // try all elements
+        if (used[i] == 0) {                          // element not used
+            current_perm[pos] = arr[i];              // place element
+            used[i] = 1;                             // mark as used
+            generate(arr, n, current_perm,
+                used, callback, pos + 1);            // recurse deeper
+            used[i] = 0;                             // backtrack
+        }
+    }
+}
+
+void permutations_backtrack(int arr[], int n,
+    void (*callback)(int perm[], int n)) {            // classic backtracking
+    if (n <= 0 || arr == NULL)                        // input check
+        return;
+    
+    int* used = (int*)calloc(n, sizeof(int));         // used flags
+    int* current_perm = (int*)malloc(n * sizeof(int));// current permutation
+    
+    generate(arr, n, current_perm, used, callback, 0);// start recursion
+    
+    free(used);                                       // free memory
+    free(current_perm);
 }
