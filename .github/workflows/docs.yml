@@ -25,6 +25,7 @@ jobs:
       - name: Build Doxygen docs
         run: |
           mkdir -p docs/html
+          pwd
           doxygen Doxyfile 2>&1 | tee doxygen.log
 
       - name: Deploy to GitHub Pages
