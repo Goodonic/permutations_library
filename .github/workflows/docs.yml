@@ -26,6 +26,7 @@ jobs:
         run: |
           mkdir -p docs/html
           pwd
+          rm .gitignore
           doxygen Doxyfile 2>&1 | tee doxygen.log
 
       - name: Deploy to GitHub Pages
