@@ -11,7 +11,7 @@ PROJECT_LOGO           = docs/images/logo.png
 OUTPUT_DIRECTORY       = docs/doxygen
 CREATE_SUBDIRS         = NO
 ALLOW_UNICODE_NAMES    = YES
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Russian
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ABBREVIATE_BRIEF       = "The $name class" \
@@ -117,7 +117,7 @@ WARN_LOGFILE           = docs/doxygen/warnings.log
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = include src/algorithms src/core
+INPUT                  = include examples src/algorithms src/core benchmarks
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.h \
@@ -166,9 +166,9 @@ IGNORE_PREFIX          =
 GENERATE_HTML          = YES
 HTML_OUTPUT            = html
 HTML_FILE_EXTENSION    = .html
-HTML_HEADER            = docs/doxygen/templates/header.html
-HTML_FOOTER            = docs/doxygen/templates/footer.html
-HTML_STYLESHEET        = docs/doxygen/templates/style.css
+HTML_HEADER            =
+HTML_FOOTER            =
+HTML_STYLESHEET        =
 HTML_EXTRA_STYLESHEET  = 
 HTML_EXTRA_FILES       = 
 HTML_COLORSTYLE_HUE    = 220
