@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 int constraint_data[] = {1, 2, 1};                    // constraint parameters
 
 bool constraint(int partial[], int k,

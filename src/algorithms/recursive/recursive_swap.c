@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 void swap(int* a, int* b) {                           // swap two values
     int n1 = *a;
     *a = *b;

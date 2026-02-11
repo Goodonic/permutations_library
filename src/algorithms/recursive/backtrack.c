@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 void generate(int arr[], int n, int current_perm[], int used[],
     void (*callback)(int perm[], int n), int pos) {  // backtracking generator
     

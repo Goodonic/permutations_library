@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
 void print_permutation(int perm[], int n) {          // print one permutation
     for (int i = 0; i < n; i++)
         printf("%d", perm[i]);                       // print element

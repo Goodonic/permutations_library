@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 int fact(int n) {                                     // factorial function
     int f = 1;
     for (int i = 1; i <= n; i++)
