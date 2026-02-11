@@ -2,9 +2,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+void swap(int* a, int* b) {                           // swap two values
+    int n1 = *a;
+    *a = *b;
+    *b = n1;
+}
 
-void sort(int arr[], int n)
-{
+void sort(int arr[], int n) {                         // simple bubble sort
     for (int i = 0; i < n; i++)
         for (int j = 0; j < n - 1; j++)
             if (arr[j] > arr[j + 1])
