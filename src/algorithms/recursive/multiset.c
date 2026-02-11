@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
+void sort(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(&arr[j], &arr[j + 1]);
+}
+
 int fact(int n) {                                     // factorial function
     int f = 1;
     for (int i = 1; i <= n; i++)
@@ -15,6 +24,7 @@ int num_unique_perms(int repeat[], int n, int u) {
         c /= fact(repeat[i]);                         // divide by repeats
     return c;                                         // result count
 }
+
 
 void generate_multiset(int arr[], int n, int u,
     int unique[], int repeat[], int current_perm[],
@@ -60,7 +70,7 @@ void multiset_permutations(int arr[], int n,
         }
     }
 
-    int c = num_unique_permutations(repeat, n, u);    // count permutations
+    int c = num_unique_perms(repeat, n, u);           // count permutations
 
     generate_multiset(arr, n, u, unique,
         repeat, current_perm, callback, 0);           // generate
