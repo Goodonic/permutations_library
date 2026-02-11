@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Permutations Library: Исходный файл src/algorithms/core/benchmark.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Permutations Library<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+   <div id="projectbrief">Comprehensive C99 library for permutation algorithms</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('benchmark_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">benchmark.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="benchmark_8c.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * ЗАДАЧА 4.2: Система бенчмаркинга</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#adee467144ab22813bb053e0e4c64ef5c">   10</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structbenchmark__result__t.html#adee467144ab22813bb053e0e4c64ef5c">total_time_ms</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#a842888d32c18c2c06b46774b03c51187">   11</a></span>    <span class="keywordtype">double</span> <a class="code hl_variable" href="structbenchmark__result__t.html#a842888d32c18c2c06b46774b03c51187">time_per_perm_ns</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#abe6f18f7cc21aabcf7d32ea437e5c628">   12</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structbenchmark__result__t.html#abe6f18f7cc21aabcf7d32ea437e5c628">memory_used_bytes</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#aea4af4ee612d904c61c8e042a5087364">   13</a></span>    <span class="keywordtype">long</span> <a class="code hl_variable" href="structbenchmark__result__t.html#aea4af4ee612d904c61c8e042a5087364">permutations_generated</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#aa8458edb61cc820abf0a5acc7f292a02">   14</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structbenchmark__result__t.html#aa8458edb61cc820abf0a5acc7f292a02">swap_operations</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#ac8aad0737e49c256a20b9e38da86663c">   15</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="structbenchmark__result__t.html#ac8aad0737e49c256a20b9e38da86663c">comparison_operations</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#abd122440a4886b3b834c9e2d2b742e9a">   16</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structbenchmark__result__t.html#abd122440a4886b3b834c9e2d2b742e9a">success</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structbenchmark__result__t.html#a212071eb005b088582f6721ea7ebaed7">   17</a></span>    <span class="keywordtype">char</span> error_message[256];</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>} <a class="code hl_struct" href="structbenchmark__result__t.html">benchmark_result_t</a>;</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/**</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> * Запуск бенчмарка для алгоритма</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> * 1. Измерение времени выполнения</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> * 2. Подсчет сгенерированных перестановок</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * 3. Измерение использования памяти</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * 4. Сбор статистики операций</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * 5. Генерация отчета</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> */</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ad">   28</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adae86e3cb01d6c9eb2d0637346175d9571">   30</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adae86e3cb01d6c9eb2d0637346175d9571">ALGO_BACKTRACK</a> = 1,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada51f790f4720323e34e85e6aa624bd79a">   31</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada51f790f4720323e34e85e6aa624bd79a">ALGO_RECURSIVE_SWAP</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada03095c71c8382c8cb545b3556e682076">   32</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada03095c71c8382c8cb545b3556e682076">ALGO_NARAYANA</a>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8fb5ef80d79fe9ebbbf5499e00c2b05c">   33</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8fb5ef80d79fe9ebbbf5499e00c2b05c">ALGO_FACTORIAL_SYSTEM</a>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada909bc4383a99739b0627ed3c37ad6c80">   34</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada909bc4383a99739b0627ed3c37ad6c80">ALGO_JOHNSON_TROTTER</a>,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adabbf73c38293dbfa517113e0e6d936649">   35</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adabbf73c38293dbfa517113e0e6d936649">ALGO_HEAP</a>,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada9f1615c46583e59e668196fe4be4699c">   36</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada9f1615c46583e59e668196fe4be4699c">ALGO_MINIMAL_CHANGE</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8e1540c36349666e877e776bdd394dc9">   37</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8e1540c36349666e877e776bdd394dc9">ALGO_CYCLE_LEADER</a>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adaf0bdb9dd13f38eed8164bff69628ae12">   38</a></span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adaf0bdb9dd13f38eed8164bff69628ae12">ALGO_BINARY_MASKS</a>,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_enumvalue" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adab2ecb9e2da0151409092c43571f0cea0">ALGO_PSEUDO_LEXICOGRAPHIC</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adab2ecb9e2da0151409092c43571f0cea0">   40</a></span>} <a class="code hl_enumeration" href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ad">permutation_algorithm_t</a>;</div>
+</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="benchmark_8c.html#abab3120436b18d5ec1dd948d129dcfbf">   42</a></span><a class="code hl_struct" href="structbenchmark__result__t.html">benchmark_result_t</a> <a class="code hl_function" href="benchmark_8c.html#abab3120436b18d5ec1dd948d129dcfbf">benchmarkAlgorithm</a>(<a class="code hl_enumeration" href="adaptive_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ad">permutation_algorithm_t</a> algo, <span class="keywordtype">int</span> arr[], <span class="keywordtype">int</span> size,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                      <span class="keywordtype">int</span> iterations)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_struct" href="structbenchmark__result__t.html">benchmark_result_t</a> result = {0};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// Подготовка тестовых данных</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// Замер времени (clock_gettime)</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// Подсчет операций через callback-счетчики</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// Измерение памяти (mallinfo или custom allocator)</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// Агрегация результатов по нескольким запускам</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">// Формирование отчета</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
+<div class="ttc" id="aadaptive_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ad"><div class="ttname"><a href="adaptive_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ad">permutation_algorithm_t</a></div><div class="ttdeci">permutation_algorithm_t</div><div class="ttdoc">ЗАДАЧА 4.4: Адаптивный выбор алгоритма</div><div class="ttdef"><b>Definition</b> <a href="adaptive_8c_source.html#l00009">adaptive.c:10</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ad"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ad">permutation_algorithm_t</a></div><div class="ttdeci">permutation_algorithm_t</div><div class="ttdoc">Запуск бенчмарка для алгоритма</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00028">benchmark.c:29</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada03095c71c8382c8cb545b3556e682076"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada03095c71c8382c8cb545b3556e682076">ALGO_NARAYANA</a></div><div class="ttdeci">@ ALGO_NARAYANA</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00032">benchmark.c:32</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada51f790f4720323e34e85e6aa624bd79a"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada51f790f4720323e34e85e6aa624bd79a">ALGO_RECURSIVE_SWAP</a></div><div class="ttdeci">@ ALGO_RECURSIVE_SWAP</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00031">benchmark.c:31</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada8e1540c36349666e877e776bdd394dc9"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8e1540c36349666e877e776bdd394dc9">ALGO_CYCLE_LEADER</a></div><div class="ttdeci">@ ALGO_CYCLE_LEADER</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00037">benchmark.c:37</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada8fb5ef80d79fe9ebbbf5499e00c2b05c"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada8fb5ef80d79fe9ebbbf5499e00c2b05c">ALGO_FACTORIAL_SYSTEM</a></div><div class="ttdeci">@ ALGO_FACTORIAL_SYSTEM</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00033">benchmark.c:33</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada909bc4383a99739b0627ed3c37ad6c80"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada909bc4383a99739b0627ed3c37ad6c80">ALGO_JOHNSON_TROTTER</a></div><div class="ttdeci">@ ALGO_JOHNSON_TROTTER</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00034">benchmark.c:34</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8ada9f1615c46583e59e668196fe4be4699c"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8ada9f1615c46583e59e668196fe4be4699c">ALGO_MINIMAL_CHANGE</a></div><div class="ttdeci">@ ALGO_MINIMAL_CHANGE</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00036">benchmark.c:36</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8adab2ecb9e2da0151409092c43571f0cea0"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adab2ecb9e2da0151409092c43571f0cea0">ALGO_PSEUDO_LEXICOGRAPHIC</a></div><div class="ttdeci">@ ALGO_PSEUDO_LEXICOGRAPHIC</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00040">benchmark.c:39</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8adabbf73c38293dbfa517113e0e6d936649"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adabbf73c38293dbfa517113e0e6d936649">ALGO_HEAP</a></div><div class="ttdeci">@ ALGO_HEAP</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00035">benchmark.c:35</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8adae86e3cb01d6c9eb2d0637346175d9571"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adae86e3cb01d6c9eb2d0637346175d9571">ALGO_BACKTRACK</a></div><div class="ttdeci">@ ALGO_BACKTRACK</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00030">benchmark.c:30</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_a04f76e89c2fd25fb5101ab453ba1d8adaf0bdb9dd13f38eed8164bff69628ae12"><div class="ttname"><a href="benchmark_8c.html#a04f76e89c2fd25fb5101ab453ba1d8adaf0bdb9dd13f38eed8164bff69628ae12">ALGO_BINARY_MASKS</a></div><div class="ttdeci">@ ALGO_BINARY_MASKS</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00038">benchmark.c:38</a></div></div>
+<div class="ttc" id="abenchmark_8c_html_abab3120436b18d5ec1dd948d129dcfbf"><div class="ttname"><a href="benchmark_8c.html#abab3120436b18d5ec1dd948d129dcfbf">benchmarkAlgorithm</a></div><div class="ttdeci">benchmark_result_t benchmarkAlgorithm(permutation_algorithm_t algo, int arr[], int size, int iterations)</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00042">benchmark.c:42</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html"><div class="ttname"><a href="structbenchmark__result__t.html">benchmark_result_t</a></div><div class="ttdoc">ЗАДАЧА 4.2: Система бенчмаркинга</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00008">benchmark.c:9</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_a842888d32c18c2c06b46774b03c51187"><div class="ttname"><a href="structbenchmark__result__t.html#a842888d32c18c2c06b46774b03c51187">benchmark_result_t::time_per_perm_ns</a></div><div class="ttdeci">double time_per_perm_ns</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00011">benchmark.c:11</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_aa8458edb61cc820abf0a5acc7f292a02"><div class="ttname"><a href="structbenchmark__result__t.html#aa8458edb61cc820abf0a5acc7f292a02">benchmark_result_t::swap_operations</a></div><div class="ttdeci">int swap_operations</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00014">benchmark.c:14</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_abd122440a4886b3b834c9e2d2b742e9a"><div class="ttname"><a href="structbenchmark__result__t.html#abd122440a4886b3b834c9e2d2b742e9a">benchmark_result_t::success</a></div><div class="ttdeci">bool success</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00016">benchmark.c:16</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_abe6f18f7cc21aabcf7d32ea437e5c628"><div class="ttname"><a href="structbenchmark__result__t.html#abe6f18f7cc21aabcf7d32ea437e5c628">benchmark_result_t::memory_used_bytes</a></div><div class="ttdeci">size_t memory_used_bytes</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00012">benchmark.c:12</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_ac8aad0737e49c256a20b9e38da86663c"><div class="ttname"><a href="structbenchmark__result__t.html#ac8aad0737e49c256a20b9e38da86663c">benchmark_result_t::comparison_operations</a></div><div class="ttdeci">int comparison_operations</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00015">benchmark.c:15</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_adee467144ab22813bb053e0e4c64ef5c"><div class="ttname"><a href="structbenchmark__result__t.html#adee467144ab22813bb053e0e4c64ef5c">benchmark_result_t::total_time_ms</a></div><div class="ttdeci">double total_time_ms</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00010">benchmark.c:10</a></div></div>
+<div class="ttc" id="astructbenchmark__result__t_html_aea4af4ee612d904c61c8e042a5087364"><div class="ttname"><a href="structbenchmark__result__t.html#aea4af4ee612d904c61c8e042a5087364">benchmark_result_t::permutations_generated</a></div><div class="ttdeci">long permutations_generated</div><div class="ttdef"><b>Definition</b> <a href="benchmark_8c_source.html#l00013">benchmark.c:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e6df591b0639d4c4807ef64d058833e2.html">algorithms</a></li><li class="navelem"><a class="el" href="dir_5665749d20c003f6feaf8081d4034585.html">core</a></li><li class="navelem"><a class="el" href="benchmark_8c.html">benchmark.c</a></li>
+    <li class="footer">Документация по Permutations Library. Последние изменения: Ср 11 Фев 2026 04:53:42. Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
