@@ -1,16 +1,31 @@
-/**
- * ЗАДАЧА 1.2: Рекурсивный алгоритм с обменами (in-place)
- * 1. Реализовать рекурсивную функцию generate_swap()
- * 2. На каждом уровне рекурсии:
- *    - Зафиксировать элемент на позиции depth
- *    - Рекурсивно сгенерировать перестановки для остальных элементов
- *    - Вернуть элемент на место
- * 3. Использовать минимальное количество дополнительной памяти
- * 4. Гарантировать генерацию всех n! перестановок
- */
-void permutationsRecursiveSwap(int arr[], int n, void (*callback)(int perm[], int n))
-{
-    // Проверка входных параметров
-    // Рекурсивная генерация с обменами
-    // Использовать callback для каждой полной перестановки
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+void swap(int* a, int* b) {                           // swap two values
+    int n1 = *a;
+    *a = *b;
+    *b = n1;
+}
+
+void generate_swap(int arr[], int n,
+    void (*callback)(int perm[], int n), int pos) {   // in-place generation
+    if (pos == n) {                                   // permutation ready
+        callback(arr, n);                             // output result
+        return;
+    }
+    
+    for (int i = pos; i < n; i++) {                   // fix position pos
+        swap(&arr[pos], &arr[i]);                     // choose element
+        generate_swap(arr, n, callback, pos + 1);     // recurse
+        swap(&arr[i], &arr[pos]);                     // restore array
+    }
+}
+
+void permutations_recursive_swap(int arr[], int n,
+    void (*callback)(int perm[], int n)) {            // wrapper for swap algo
+    if (n <= 0 || arr == NULL)                        // input check
+        return;
+
+    generate_swap(arr, n, callback, 0);               // start recursion
 }
